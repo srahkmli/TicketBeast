@@ -25,9 +25,11 @@ class ConcertFactory extends Factory
             'state' => 'ON',
             'zip' => '17916',
             'additional_information' => 'For tickets, call (555) 555-5555.',
+
         ];
 
     }
+
     public function published()
     {
         return $this->state(function (array $attributes) {
@@ -36,6 +38,7 @@ class ConcertFactory extends Factory
             ];
         });
     }
+
     public function unpublished()
     {
         return $this->state(function (array $attributes) {

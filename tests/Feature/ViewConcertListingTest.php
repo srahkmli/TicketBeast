@@ -29,6 +29,7 @@ class ViewConcertListingTest extends TestCase
             'state' => 'ON',
             'zip' => '17916',
             'additional_information' => 'For tickets, call (555) 555-5555.',
+
         ]);
 //view the list
         $response = $this->get('/concerts/' . $concert->id);
@@ -52,6 +53,7 @@ class ViewConcertListingTest extends TestCase
     public function user_cant_view_the_unpublished_concert()
     {
         $concert = Concert::factory()->unpublished()->create();
+
 
 //view the list
         $response = $this->get('/concerts/' . $concert->id);
